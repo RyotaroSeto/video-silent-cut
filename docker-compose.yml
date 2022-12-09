@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  web:
+    container_name: video-cut-auto
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      LANG: ja_JP.utf8
+      TZ: Asia/Tokyo
+    ports:
+      - '8888:8888'
+    volumes:
+      - ./:/var/www
+    working_dir: /var/www
+    tty: true
